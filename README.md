@@ -1,8 +1,8 @@
 ![JS Poker](http://img.mdp.im.s3.amazonaws.com/2013m19Untitled_83t55f.jpg)
 
-# JS Poker
+# JS Pokerbot Competition
 
-A No-limit Texas Hold'em poker tournament for Javascript bots played via pull requests with Travis CI as the dealer.
+A No-limit Texas Hold'em poker tournament for Javascript bots.
 
 ## Introduction
 
@@ -11,46 +11,32 @@ At the moment they are each quite unintelligent/unimaginative. The challenge is 
 write a competitor in JS that can handily beat them all over the course of 50 tournaments,
 each with a maximum of 500 hands.
 
-_Example_:
-
-Each bot starts with $1000 for every tournament, regardless of past performance. It must play 50 tournaments against the other bots. Therefore the bot is putting up $50k in total in the tournaments and needs to see a return of $100k if the challenge is 2x. This may seem hard, but keep in mind that over the course of 50 tournaments, the other bots are putting $300k into the pot, you only need to take 1/3 of this.
-
-If you win, your bot will be added to the table to play future bots.
-
-## Why
-
-Like many people, I like to play poker and lose money. The obvious next step was to automate this.
-
-
 ## How to play
 
-1. Clone this repo and run 'npm install'
+1. Clone this repo
 1. Modify the existing [challenger bot](players/challengerBot.js)
-1. Tune it to double your money over the course of 25,000 hands (50 Tournaments of 500 hands each)
+1. Tune it to maximize winnings
 
 ## Rules
 
 1. The game is No-limit Texas Hold'em ($10-20), with each player starting with $1000
 1. Only one file may be modified 'players/challengerBot.js' 
-1. You cannot load any modules. This includes Node.js core modules (fs, http, etc.)
-1. Source code may not be obsfuscated/minified. Everyone should be able to learn from your winning bot.
 1. Bots must win through legitimate poker play. Hacking is fine, but the bounty will only be paid to legitimate winners. Think of it this way, if your bot was in a casino, would it get kicked out or arrested?
+2. You may use the ```pokerbot-helper``` package for some useful tools to help build a pokerbot
 
 ## Installation
 
-    # Requires NodeJs >= 0.10.0
-    git clone https://github.com/mdp/JsPoker.git
-    cd JsPoker
-    npm install
-    npm test
-    # Now go and turn your bot into a champion!
+1. Clone this repository
+2. _Optional_ run ```npm install pokerbot-helper``` from the command-line in VS Code to install the pokerbot helper package (Documentation to come)
 
 ### Building a better poker bot
 
-You can test out your bot simply by pressing the run button. Modify the number of hands tested in index.js
+Test your bot simply by running the command ```node index.js``` from the VS Code command-line. 
 
 The output will include each bots betting actions and cards held in order
 to make tuning and debugging easier.
+
+Modify the number of hands tested in index.js
 
 #### Game data and bot actions
 
@@ -69,6 +55,8 @@ Game object consists of 6 properties:
 - `betting` Betting options available - These are incremental wager options
 - `players` Array of each player, their actions for any round, and wager/stack
 - `community` Community cards
+
+**I recommend printing out the ```game``` object to the console so you can see how it is structured and what data is available**
 
 #### Bot Actions
 
