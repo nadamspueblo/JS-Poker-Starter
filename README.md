@@ -27,7 +27,7 @@ each with a maximum of 500 hands.
 ## Installation
 
 1. Clone this repository
-2. _Optional_ run ```npm install pokerbot-helper``` from the command-line in VS Code to install the pokerbot helper package (Documentation to come)
+2. _Optional_ run ```npm install pokerbot-helper``` from the command-line in VS Code to install the pokerbot helper package ([See documentation](https://github.com/nadamspueblo/PokerBotHelper))
 
 ### Building a better poker bot
 
@@ -36,7 +36,7 @@ Test your bot simply by running the command ```node index.js``` from the VS Code
 The output will include each bots betting actions and cards held in order
 to make tuning and debugging easier.
 
-Modify the number of hands tested in index.js
+Modify the number of hands tested in ```index.js```
 
 #### Game data and bot actions
 
