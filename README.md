@@ -45,8 +45,6 @@ to return a wager as an integer.
 
 #### Game data
 
-Here's an example game date payload: [GameData.json](https://gist.github.com/mdp/050cd82f651eb9f9b9c8)
-
 Game object consists of 6 properties:
 
 - `self` Your bots current standing/cards
@@ -55,6 +53,90 @@ Game object consists of 6 properties:
 - `betting` Betting options available - These are incremental wager options
 - `players` Array of each player, their actions for any round, and wager/stack
 - `community` Community cards
+
+**Your cards are available as an array using ```game.self.cards```**
+
+**The community cards are available as an array using ```game.community```**
+
+Sample Game Object Data is below
+```
+community: [ '8d', '2h', '5d', '4h', '3h' ],
+  state: 'river',
+  hand: 1,
+  betting: { call: 60, raise: 80, canRaise: false },
+  self: {
+    name: 'ChallengerBot',
+    blind: 0,
+    ante: 0,
+    wagered: 900,
+    state: 'active',
+    chips: 100,
+    actions: {
+      'pre-flop': [Array],
+      flop: [Array],
+      turn: [Array],
+      river: [Array]
+    },
+    cards: [ '2d', 'Ad' ],
+    position: 5
+  },
+  players: [
+    {
+      name: 'SmartBot',
+      blind: 5,
+      ante: 0,
+      wagered: 920,
+      state: 'active',
+      chips: 80,
+      actions: [Object]
+    },
+    {
+      name: 'MercBot',
+      blind: 10,
+      ante: 0,
+      wagered: 10,
+      state: 'folded',
+      chips: 990,
+      actions: [Object]
+    },
+    {
+      name: 'CallBot',
+      blind: 0,
+      ante: 0,
+      wagered: 920,
+      state: 'active',
+      chips: 80,
+      actions: [Object]
+    },
+    {
+      name: 'RandBot',
+      blind: 0,
+      ante: 0,
+      wagered: 940,
+      state: 'active',
+      chips: 60,
+      actions: [Object]
+    },
+    {
+      name: 'RandBot #2',
+      blind: 0,
+      ante: 0,
+      wagered: 960,
+      state: 'active',
+      chips: 40,
+      actions: [Object]
+    },
+    {
+      name: 'ChallengerBot',
+      blind: 0,
+      ante: 0,
+      wagered: 900,
+      state: 'active',
+      chips: 100,
+      actions: [Object]
+    }
+  ]
+```
 
 **I recommend printing out the ```game``` object to the console so you can see how it is structured and what data is available**
 
